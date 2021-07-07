@@ -34,6 +34,7 @@ class Result {
   List<AllBestProducts> allBestProducts;
   List<AllPartners> allPartners;
   List<allFirstBanners> all_first_banners;
+  List<allSecondBanners> all_second_banners;
 
   Result(
       {this.allSliders,
@@ -81,12 +82,21 @@ class Result {
         allPartners.add(new AllPartners.fromJson(v));
       });
     }
+
     if (json['all_first_banners'] != null) {
       all_first_banners = new List<allFirstBanners>();
       json['all_first_banners'].forEach((v) {
         all_first_banners.add(new allFirstBanners.fromJson(v));
       });
     }
+
+    if (json['all_second_banners'] != null) {
+      all_second_banners = new List<allSecondBanners>();
+      json['all_second_banners'].forEach((v) {
+        all_second_banners.add(new allSecondBanners.fromJson(v));
+      });
+    }
+
   }
 
   Map<String, dynamic> toJson() {
@@ -304,6 +314,25 @@ class allFirstBanners {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['image_categ'] = this.imageCateg;
     data['firstBanner']= this.firstBanner;
+    return data;
+  }
+}
+
+class allSecondBanners {
+  String secondLink;
+  String secondBanner;
+
+  allSecondBanners({this.secondLink,this.secondBanner});
+
+  allSecondBanners.fromJson(Map<String, dynamic> json) {
+    secondBanner = json['second_banner'];
+    secondLink=   json['second_link'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['second_banner'] = this.secondBanner;
+    data['second_link']= this.secondLink;
     return data;
   }
 }

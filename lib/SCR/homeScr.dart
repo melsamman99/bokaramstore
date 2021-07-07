@@ -127,7 +127,8 @@ Timer(Duration(seconds: 0), ()async{
         child: Builder(
           builder: (context) => Container(
             height: 75,
-            // padding: EdgeInsets.symmetric(horizontal: 20),
+            // padding: EdgeInsets.symmetric(horizontal: 1),
+            // margin: EdgeInsets.symmetric(horizontal: 3),
             child: Row(
                  mainAxisSize: MainAxisSize.max,
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -372,7 +373,7 @@ Timer(Duration(seconds: 0), ()async{
                 );
               }
               /////
-              for (int i = 0; i < snapshot.data.result.all_first_banners.length; i++) {
+              for (int i = 0; i < snapshot.data.result.all_second_banners.length; i++) {
                 Banners2.add(Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: Container(
@@ -385,7 +386,7 @@ Timer(Duration(seconds: 0), ()async{
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: Image.network(
-                                snapshot.data.result.all_first_banners[i].imageCateg,
+                                snapshot.data.result.all_second_banners[i].secondBanner,
                                 fit: BoxFit.fill,),
                             ),
                             onTap: () {
@@ -418,6 +419,9 @@ Timer(Duration(seconds: 0), ()async{
                     ),
                   ),
                 );
+                // print("oijoijionioniinl${snapshot.data.result.allSliders[i].sliderImg}");
+                print("ععهاعهخاهعرنرخه${snapshot.data.result.all_second_banners[i].secondBanner}");
+
               }
 
 
@@ -773,6 +777,7 @@ Timer(Duration(seconds: 0), ()async{
                           height: 2,
                         )),
                         SliverFixedExtentList(
+
                           itemExtent: size.height * .2,
                           delegate: SliverChildListDelegate([
                             ClipRRect (

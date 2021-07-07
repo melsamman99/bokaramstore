@@ -202,17 +202,7 @@ class _OldOrdersState extends State<OldOrders> {
                                         Padding(
                                           padding: const EdgeInsets.only(
                                               left: 16, right: 16),
-                                          child: Text(snapshot
-                                                  .data
-                                                  .result
-                                                  .orderDetails[pos]
-                                                  .shippingCharges +
-                                              " " +
-                                              snapshot
-                                                  .data
-                                                  .result
-                                                  .orderDetails[pos]
-                                                  .currencyName),
+                                          child: Text("${snapshot.data.result.orderDetails[pos].shippingCharges} ${snapshot.data.result.orderDetails[pos].currencyName}"),
                                         ),
                                       ],
                                     ),
@@ -271,17 +261,7 @@ class _OldOrdersState extends State<OldOrders> {
                                         Padding(
                                           padding: const EdgeInsets.only(
                                               left: 16, right: 16),
-                                          child: Text(snapshot
-                                                  .data
-                                                  .result
-                                                  .orderDetails[pos]
-                                                  .totalPrice +
-                                              " " +
-                                              snapshot
-                                                  .data
-                                                  .result
-                                                  .orderDetails[pos]
-                                                  .currencyName),
+                                          child: Text("${snapshot.data.result.orderDetails[pos].totalPrice} ${snapshot.data.result.orderDetails[pos].currencyName}"),
                                         ),
                                       ],
                                     ),

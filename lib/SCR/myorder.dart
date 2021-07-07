@@ -215,24 +215,29 @@ setState(() {
                     )
                         : GestureDetector(
                             onTap: () {
-                              print(token);
-                              senddata = true;
-                              setState(() {});
-                              _allNetworking
-                                  .set_user_data(
-                                      phone: phone.text,
-                                      token_id: token,
-                                      lang: 'ar',anther_address: address2.text,
-                                      share_value: 0,
-                                      city_id: city.cityId,
-                                      address: address.text,
-                                      id_order: widget.id_order,
-                                      fullname: name.text)
-                                  .then((value) {
-                                Get.snackbar('', value.message);
-                                senddata = false;
+                              if(city!=null) {
+                                print(token);
+                                senddata = true;
                                 setState(() {});
-                              });
+                                _allNetworking
+                                    .set_user_data(
+                                    phone: phone.text,
+                                    token_id: token,
+                                    lang: 'ar',
+                                    anther_address: address2.text,
+                                    share_value: 0,
+                                    city_id: city.cityId,
+                                    address: address.text,
+                                    id_order: widget.id_order,
+                                    fullname: name.text)
+                                    .then((value) {
+                                  Get.snackbar('', value.message);
+                                  senddata = false;
+                                  setState(() {});
+                                });
+                              }else{
+                                Get.snackbar('', "من فضلك اختار المدينة");
+                              }
                             },
                             child: Container(
                               height: 50,
