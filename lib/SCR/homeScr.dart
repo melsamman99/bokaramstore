@@ -577,7 +577,7 @@ Timer(Duration(seconds: 0), ()async{
                                           print(_textEditingController.text);
                                           serch.clear();
                                           serchbargetdata = true;
-                                          setState(() {});
+                                          // setState(() {});
                                           _allNetworking
                                               .get_search_name(
                                                   name: _textEditingController
@@ -608,7 +608,7 @@ Timer(Duration(seconds: 0), ()async{
                                             }
                                             serchbargetdata = false;
 
-                                            setState(() {});
+                                            // setState(() {});
                                             // set up the button
                                             Widget okButton = FlatButton(
                                               child: Text("OK"),
